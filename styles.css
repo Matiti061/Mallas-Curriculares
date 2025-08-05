@@ -1,37 +1,82 @@
+
+:root {
+    --celeste-pastel: #AEEFFF;
+    --rosado-pastel: #FFD1DC;
+    --calipso: #00CED1;
+    --celeste: #87CEFA;
+    --fucsia: #FF69B4;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--celeste-pastel);
     padding: 20px;
     color: #333;
+    transition: background 0.5s ease;
 }
+
 h1 {
     text-align: center;
+    color: var(--calipso);
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
 }
+
 .semestre {
-    margin: 20px 0;
+    margin: 30px 0;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    animation: slideUp 0.6s ease-in-out;
 }
+
 .semestre h2 {
-    background: #333;
-    color: #fff;
-    padding: 10px;
+    background: var(--fucsia);
+    color: white;
+    padding: 12px;
+    margin: 0;
+    font-size: 1.2em;
+    letter-spacing: 0.5px;
 }
+
 .asignatura {
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 10px 15px;
     border-left: 5px solid transparent;
-    margin: 3px 0;
-    background-color: white;
-    transition: background 0.3s, border-left 0.3s;
+    margin: 2px 0;
+    background-color: var(--rosado-pastel);
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
 }
+
 .asignatura:hover {
-    background-color: #e0e0e0;
+    background-color: var(--celeste);
+    transform: scale(1.02);
 }
+
 .aprobada {
     text-decoration: line-through;
     color: gray;
-}
-.resaltada {
-    border-left: 5px solid #007BFF;
-    background-color: #e6f0ff;
+    background-color: #e8e8e8 !important;
+    transition: all 0.3s ease;
 }
 
+.resaltada {
+    border-left: 5px solid var(--calipso);
+    background-color: var(--celeste-pastel) !important;
+    transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
