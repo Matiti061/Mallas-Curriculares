@@ -1,175 +1,252 @@
-const malla = {
-    "Semestre 1": [
-        "Introducción al Derecho",
-        "Historia Constitucional de Chile",
-        "Instituciones Políticas",
-        "Fundamentos Filosóficos del Derecho",
-        "Estrategias para el Aprendizaje"
-    ],
-    "Semestre 2": [
-        "Teoría de la Ley y Las Personas",
-        "Derechos Fundamentales",
-        "Fundamentos de la Economía",
-        "Fundamentos de la Investigación Jurídica",
-        "Filosofía del Derecho",
-        "Antropología"
-    ],
-    "Semestre 3": [
-        "Acto Jurídico",
-        "Derecho Constitucional Orgánico",
-        "Derecho individual del Trabajo",
-        "Derecho Procesal Orgánico",
-        "Ética"
-    ],
-    "Semestre 4": [
-        "Bienes",
-        "Derecho Administrativo",
-        "Derecho Colectivo del Trabajo y de la Seguridad Social",
-        "Reglas Comunes a Todo Procedimiento",
-        "Argumentación y Expresión Oral",
-        "Electivo de Formación Integral 1"
-    ],
-    "Semestre 5": [
-        "Obligaciones y Contratos",
-        "Teoría del Delito y de la Pena",
-        "Actos de Comercio",
-        "Procedimientos Declarativos",
-        "Métodos Colaborativos de Resolución de Conflictos",
-        "Electivo de Formación Integral 2"
-    ],
-    "Semestre 6": [
-        "Responsabilidad Civil",
-        "Formas de Aparición del Delito",
-        "Derecho Societario",
-        "Recursos y Juicio Ejecutivo",
-        "Mediación, Negociación, Conciliación Judicial y Arbitraje",
-        "Electivo de Formación Integral 3"
-    ],
-    "Semestre 7": [
-        "Derecho de Familia y Sucesorio",
-        "Derecho Penal Especial",
-        "Insolvencia y Derecho Concursal",
-        "Procedimientos Especiales",
-        "Redacción Legal",
-        "Electivo de Formación Integral 4"
-    ],
-    "Semestre 8": [
-        "Ética y Responsabilidad Profesional",
-        "Derecho Penal Económico y Compliance",
-        "Derecho Tributario",
-        "Derecho Procesal Penal",
-        "Derecho Económico Regulatorio",
-        "Destrezas de Litigación Oral"
-    ],
-    "Semestre 9": [
-        "Clínica Jurídica 1",
-        "Seminario de Investigación",
-        "Electivo de Profundización 1",
-        "Electivo de Profundización 2",
-        "Electivo 1"
-    ],
-    "Semestre 10": [
-        "Clínica Jurídica 2",
-        "Electivo de Profundización 3",
-        "Electivo 2",
-        "Seminario de Integración Jurídica"
-    ]
+/* 
+  Datos de previaturas cargados desde los PDFs provistos por el usuario.
+  Referencias:
+  - Derecho: :contentReference[oaicite:0]{index=0}
+  - ICINF:  :contentReference[oaicite:1]{index=1}
+*/
+
+const curricula = {
+  DERECHO: [
+    { nombre: "Introducción al Derecho", prereq: [] },
+    { nombre: "Teoría de la Ley de las Personas", prereq: ["Introducción al Derecho"] }, // ejemplo solicitado
+    { nombre: "Instituciones Políticas", prereq: [] },
+    { nombre: "Derechos Fundamentales", prereq: ["Instituciones Políticas"] },
+    { nombre: "Fundamentos Filosóficos del Derecho", prereq: [] },
+    { nombre: "Filosofía del Derecho", prereq: ["Fundamentos Filosóficos del Derecho"] },
+    { nombre: "Acto Jurídico", prereq: ["Teoría de la Ley de las Personas"] },
+    { nombre: "Derecho Constitucional Orgánico", prereq: ["Derechos Fundamentales"] },
+    { nombre: "Fundamentos de la Economía", prereq: [] },
+    { nombre: "Derecho Individual del Trabajo", prereq: ["Fundamentos de la Economía"] },
+    { nombre: "Derecho Procesal Orgánico", prereq: ["Derechos Fundamentales"] },
+    { nombre: "Antropología", prereq: [] },
+    { nombre: "Ética", prereq: ["Antropología"] },
+    { nombre: "Bienes", prereq: ["Acto Jurídico"] },
+    { nombre: "Derecho Administrativo", prereq: ["Derecho Constitucional Orgánico"] },
+    { nombre: "Derecho Colectivo del Trabajo y de la Seguridad Social", prereq: ["Derecho Individual del Trabajo"] },
+    { nombre: "Reglas Comunes a Todo Procedimiento", prereq: ["Derecho Procesal Orgánico"] },
+    { nombre: "Electivo de Formación Integral 1", prereq: ["Ética"] },
+    { nombre: "Obligaciones y Contratos", prereq: ["Bienes"] },
+    { nombre: "Teoría del Delito y de la Pena", prereq: ["Derechos Fundamentales"] },
+    { nombre: "Actos de Comercio", prereq: ["Acto Jurídico"] },
+    { nombre: "Procedimientos Declarativos", prereq: ["Reglas Comunes a Todo Procedimiento"] },
+    { nombre: "Argumentación y Expresión Oral", prereq: [] },
+    { nombre: "Métodos Colaborativos de Resolución de Conflictos", prereq: ["Argumentación y Expresión Oral"] },
+    { nombre: "Responsabilidad Civil", prereq: ["Obligaciones y Contratos"] },
+    { nombre: "Formas de Aparición del Delito", prereq: ["Teoría del Delito y de la Pena"] },
+    { nombre: "Derecho Societario", prereq: ["Actos de Comercio"] },
+    { nombre: "Recursos y Juicio Ejecutivo", prereq: ["Procedimientos Declarativos"] },
+    { nombre: "Mediación, Negociación, Conciliación Judicial y Arbitraje", prereq: ["Métodos Colaborativos de Resolución de Conflictos"] },
+    { nombre: "Derecho de Familia y Sucesorio", prereq: ["Responsabilidad Civil"] },
+    { nombre: "Derecho Penal Especial", prereq: ["Formas de Aparición del Delito"] },
+    { nombre: "Insolvencia y Derecho Concursal", prereq: ["Derecho Societario"] },
+    { nombre: "Procedimientos Especiales", prereq: ["Procedimientos Declarativos"] },
+    { nombre: "Redacción Legal", prereq: ["Mediación, Negociación, Conciliación Judicial y Arbitraje"] },
+    { nombre: "Ética y Responsabilidad Profesional", prereq: ["Filosofía del Derecho"] },
+    { nombre: "Derecho Penal Económico y Compliance", prereq: ["Derecho Penal Especial"] },
+    { nombre: "Derecho Tributario", prereq: ["Obligaciones y Contratos"] },
+    { nombre: "Derecho Procesal Penal", prereq: ["Derecho Penal Especial"] },
+    { nombre: "Derecho Económico Regulatorio", prereq: ["Derecho Administrativo"] },
+    { nombre: "Destrezas de Litigación Oral", prereq: ["Procedimientos Especiales"] },
+    { nombre: "Clínica Jurídica 1", prereq: ["Procedimientos Especiales"] },
+    { nombre: "Fundamentos de la Investigación Jurídica", prereq: [] },
+    { nombre: "Seminario de Investigación", prereq: ["Fundamentos de la Investigación Jurídica"] },
+    { nombre: "Clínica Jurídica 2", prereq: ["Clínica Jurídica 1"] },
+    { nombre: "Seminario de Integración Jurídica", prereq: ["Todo aprobado hasta el noveno semestre"] }
+  ],
+
+  ICINF: [
+    { nombre: "Introduccion a la matematica", prereq: [] },
+    { nombre: "Introduccion al calculo", prereq: ["Introduccion a la matematica"] },
+    { nombre: "Programacion", prereq: [] },
+    { nombre: "Programacion Orientada a Objetos", prereq: ["Programacion"] },
+    { nombre: "Calculo Diferencial e Integral", prereq: ["Introduccion al calculo"] },
+    { nombre: "Algebra", prereq: [] },
+    { nombre: "Algebra superior", prereq: ["Algebra"] },
+    { nombre: "Introduccion a la fisica", prereq: [] },
+    { nombre: "Fisica Newtoniana", prereq: ["Introduccion al calculo","Introduccion a la fisica"] },
+    { nombre: "Estructura de Datos", prereq: ["Programacion"] },
+    { nombre: "Taller de Programacion Aplicada", prereq: ["Programacion Orientada a Objetos"] },
+    { nombre: "Calculo Multivariable", prereq: ["Calculo Diferencial e Integral"] },
+    { nombre: "Estructuras Discretas", prereq: ["Algebra"] },
+    { nombre: "Electromagnetismo", prereq: ["Fisica Newtoniana","Calculo Diferencial e Integral"] },
+    { nombre: "Ingles 1", prereq: [] },
+    { nombre: "Ingles 2", prereq: ["Ingles 1"] },
+    { nombre: "Ecuaciones Diferenciales", prereq: ["Calculo Multivariable"] },
+    { nombre: "Modelamiento y Paradigmas de Programacion", prereq: [] },
+    { nombre: "Base de Datos", prereq: ["Modelamiento y Paradigmas de Programacion"] },
+    { nombre: "Ingles 3", prereq: ["Ingles 2"] },
+    { nombre: "Calculo Numerico", prereq: ["Calculo Multivariable"] },
+    { nombre: "Taller de Diseño Digital", prereq: ["Electromagnetismo"] },
+    { nombre: "Base de datos avanzada", prereq: ["Base de Datos"] },
+    { nombre: "Ingles 4", prereq: ["Ingles 3"] },
+    { nombre: "Ingenieria de sistemas", prereq: [] },
+    { nombre: "Sistemas de Informacion", prereq: ["Ingenieria de sistemas"] },
+    { nombre: "Tecnologias Web Y moviles", prereq: [] },
+    { nombre: "Taller de Ingenieria Informatica", prereq: ["Tecnologias Web Y moviles"] },
+    { nombre: "Ingles para Informaticos 1", prereq: ["Ingles 4"] },
+    { nombre: "Practica Intermedia", prereq: ["Base de Datos"] },
+    { nombre: "Inevstigacion Operativa", prereq: ["Algebra superior"] },
+    { nombre: "Arquitectura de Computadores", prereq: [] },
+    { nombre: "Sistemas Operativos", prereq: ["Arquitectura de Computadores"] },
+    { nombre: "Ingenieria de Software", prereq: ["Modelamiento y Paradigmas de Programacion"] },
+    { nombre: "Ingles para informaticos 2", prereq: ["Ingles para informaticos 1"] },
+    { nombre: "Automatas y Lenguajes Formales", prereq: [] },
+    { nombre: "Inteligencia Artificial", prereq: ["Automatas y Lenguajes Formales"] },
+    { nombre: "Taller de Ingenieria de Software", prereq: ["Ingenieria de Software"] },
+    { nombre: "Redes y comunicaciones", prereq: [] },
+    { nombre: "Sistemas Distribuidos", prereq: ["Redes y comunicaciones"] },
+    { nombre: "Seguridad Informatica", prereq: ["Taller de Ingenieria Informatica"] },
+    { nombre: "Taller de Integracion Tecnologica", prereq: ["Taller de Ingenieria de Software"] },
+    { nombre: "Anteproyecto de Titulo", prereq: ["Todas las asignaturas hasta el noveno semestre"] },
+    { nombre: "Proyecto de Titulo", prereq: ["Anteproyecto de Titulo"] },
+    { nombre: "Practica Profesional", prereq: ["Todas las asignaturas hasta el octavo semestre"] }
+  ]
 };
 
-const previaturas = {
-    "Teoría de la Ley y Las Personas": ["Introducción al Derecho"],
-    "Derechos Fundamentales": ["Instituciones Políticas"],
-    "Filosofía del Derecho": ["Fundamentos Filosóficos del Derecho"],
-    "Acto Jurídico": ["Teoría de la Ley y Las Personas"],
-    "Derecho Constitucional Orgánico": ["Derechos Fundamentales"],
-    "Derecho individual del Trabajo": ["Fundamentos de la Economía"],
-    "Derecho Procesal Orgánico": ["Derechos Fundamentales"],
-    "Ética": ["Antropología"],
-    "Bienes": ["Acto Jurídico"],
-    "Derecho Administrativo": ["Derecho Constitucional Orgánico"],
-    "Derecho Colectivo del Trabajo y de la Seguridad Social": ["Derecho individual del Trabajo"],
-    "Reglas Comunes a Todo Procedimiento": ["Derecho Procesal Orgánico"],
-    "Electivo de Formación Integral 1": ["Ética"],
-    "Obligaciones y Contratos": ["Bienes"],
-    "Teoría del Delito y de la Pena": ["Derechos Fundamentales"],
-    "Actos de Comercio": ["Acto Jurídico"],
-    "Procedimientos Declarativos": ["Reglas Comunes a Todo Procedimiento"],
-    "Métodos Colaborativos de Resolución de Conflictos": ["Argumentación y Expresión Oral"],
-    "Responsabilidad Civil": ["Obligaciones y Contratos"],
-    "Formas de Aparición del Delito": ["Teoría del Delito y de la Pena"],
-    "Derecho Societario": ["Actos de Comercio"],
-    "Recursos y Juicio Ejecutivo": ["Procedimientos Declarativos"],
-    "Mediación, Negociación, Conciliación Judicial y Arbitraje": ["Métodos Colaborativos de Resolución de Conflictos"],
-    "Derecho de Familia y Sucesorio": ["Responsabilidad Civil"],
-    "Derecho Penal Especial": ["Formas de Aparición del Delito"],
-    "Insolvencia y Derecho Concursal": ["Derecho Societario"],
-    "Procedimientos Especiales": ["Procedimientos Declarativos"],
-    "Redacción Legal": ["Mediación, Negociación, Conciliación Judicial y Arbitraje"],
-    "Ética y Responsabilidad Profesional": ["Filosofía del Derecho"],
-    "Derecho Penal Económico y Compliance": ["Derecho Penal Especial"],
-    "Derecho Tributario": ["Obligaciones y Contratos"],
-    "Derecho Procesal Penal": ["Derecho Penal Especial"],
-    "Derecho Económico Regulatorio": ["Derecho Administrativo"],
-    "Destrezas de Litigación Oral": ["Procedimientos Especiales"],
-    "Clínica Jurídica 1": ["Procedimientos Especiales"],
-    "Seminario de Investigación": ["Fundamentos de la Investigación Jurídica"],
-    "Clínica Jurídica 2": ["Clínica Jurídica 1"],
-    "Seminario de Integración Jurídica": ["TODO"]
-};
+/* ------------------ Utilidades ------------------ */
 
-const contenedor = document.getElementById("malla");
+const $ = (sel, ctx=document) => ctx.querySelector(sel);
+const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
 
-for (let semestre in malla) {
-    const divSemestre = document.createElement("div");
-    divSemestre.className = "semestre";
-    const titulo = document.createElement("h2");
-    titulo.textContent = semestre;
-    divSemestre.appendChild(titulo);
+const STORAGE_KEY = (plan) => `malla:${plan}:aprobados`;
 
-    malla[semestre].forEach(asignatura => {
-        const divAsig = document.createElement("div");
-        divAsig.className = "asignatura";
-        divAsig.textContent = asignatura;
-
-        divAsig.addEventListener("click", () => {
-            // Toggle tachado
-            divAsig.classList.toggle("aprobada");
-
-            // Quitar resaltado anterior
-            document.querySelectorAll(".resaltada").forEach(el => el.classList.remove("resaltada"));
-
-            // Resaltar las previaturas si existen
-            if (previaturas[asignatura]) {
-                document.querySelectorAll(".asignatura").forEach(el => {
-                    if (previaturas[asignatura].includes(el.textContent)) {
-                        el.classList.add("resaltada");
-                    }
-                });
-            }
-        });
-
-        divSemestre.appendChild(divAsig);
-    });
-
-    contenedor.appendChild(divSemestre);
+function cargarAprobados(plan){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY(plan));
+    return raw ? JSON.parse(raw) : [];
+  }catch{ return []; }
+}
+function guardarAprobados(plan, aprobados){
+  localStorage.setItem(STORAGE_KEY(plan), JSON.stringify(aprobados));
 }
 
+function normalizar(str){ return str.normalize("NFD").replace(/\p{Diacritic}/gu,"").toLowerCase(); }
 
-// Cargar estado guardado
-window.addEventListener("DOMContentLoaded", () => {
-    const aprobadasGuardadas = JSON.parse(localStorage.getItem("aprobadas") || "[]");
+/* Determina si una asignatura está disponible (todas sus previaturas aprobadas) */
+function disponible(asig, aprobados){
+  return (asig.prereq||[]).every(p => aprobados.includes(p));
+}
 
-    document.querySelectorAll(".asignatura").forEach(divAsig => {
-        if (aprobadasGuardadas.includes(divAsig.textContent)) {
-            divAsig.classList.add("aprobada");
-        }
-    });
+/* ------------------ Render ------------------ */
+
+const lista = $("#lista");
+const planSelect = $("#planSelect");
+const buscador = $("#buscador");
+const btnMarcarTodos = $("#btnMarcarTodos");
+const btnLimpiar = $("#btnLimpiar");
+
+function crearCard(asig, plan, aprobados){
+  const card = document.createElement("article");
+  card.className = "card";
+
+  const done = aprobados.includes(asig.nombre);
+  const isDisponible = disponible(asig, aprobados) || done;
+  if(done) card.classList.add("done");
+  if(!isDisponible && !done) card.classList.add("locked");
+
+  const pill = document.createElement("span");
+  pill.className = "state-pill " + (done ? "pill-done" : isDisponible ? "pill-enabled" : "pill-locked");
+  pill.textContent = done ? "Aprobada" : isDisponible ? "Disponible" : "Bloqueada";
+
+  const header = document.createElement("div");
+  header.className = "card-header";
+
+  const badge = document.createElement("span");
+  badge.className = "badge";
+  badge.textContent = plan;
+
+  const title = document.createElement("h3");
+  title.className = "card-title";
+  title.textContent = asig.nombre;
+
+  header.appendChild(badge);
+  header.appendChild(title);
+
+  const prereq = document.createElement("p");
+  prereq.className = "card-prereq";
+  const faltantes = (asig.prereq||[]).filter(p => !aprobados.includes(p));
+  if((asig.prereq||[]).length === 0){
+    prereq.textContent = "Sin previaturas.";
+  }else if(faltantes.length === 0){
+    prereq.textContent = "Previaturas completas.";
+  }else{
+    prereq.innerHTML = `Previaturas: ${asig.prereq.join(" • ")}<br><strong>Faltantes:</strong> ${faltantes.join(" • ")}`;
+  }
+
+  const label = document.createElement("label");
+  label.className = "checkbox";
+  const input = document.createElement("input");
+  input.type = "checkbox";
+  input.checked = done;
+  input.ariaLabel = `Marcar ${asig.nombre} como aprobada`;
+
+  input.addEventListener("change", () => {
+    const aprob = new Set(cargarAprobados(plan));
+    if(input.checked){
+      aprob.add(asig.nombre);
+    }else{
+      aprob.delete(asig.nombre);
+      // Al desmarcar, no forzamos desmarcar dependientes: el usuario puede controlar manualmente.
+      // (Si prefieres "propagar" y desmarcar dependientes, se puede añadir lógica extra aquí.)
+    }
+    const arr = Array.from(aprob);
+    guardarAprobados(plan, arr);
+    render(); // recalc disponibilidad
+  });
+
+  label.appendChild(input);
+  label.appendChild(document.createTextNode("Aprobada"));
+
+  card.appendChild(pill);
+  card.appendChild(header);
+  card.appendChild(prereq);
+  card.appendChild(label);
+
+  // A11y: bloqueamos el checkbox sólo si está bloqueada y no está marcada
+  if(card.classList.contains("locked")){
+    input.disabled = true;
+    label.title = "Bloqueada por previaturas pendientes.";
+  }
+
+  return card;
+}
+
+function render(){
+  const plan = planSelect.value;
+  const query = normalizar(buscador.value || "");
+  const aprobados = cargarAprobados(plan);
+  lista.innerHTML = "";
+
+  const items = curricula[plan]
+    .slice()
+    .sort((a,b)=> a.nombre.localeCompare(b.nombre, "es"))
+    .filter(a => normalizar(a.nombre).includes(query) || (a.prereq||[]).some(p => normalizar(p).includes(query)));
+
+  items.forEach(asig => {
+    const card = crearCard(asig, plan, aprobados);
+    lista.appendChild(card);
+  });
+}
+
+/* ------------------ Eventos ------------------ */
+
+planSelect.addEventListener("change", render);
+buscador.addEventListener("input", render);
+
+btnMarcarTodos.addEventListener("click", () => {
+  const plan = planSelect.value;
+  const todos = curricula[plan].map(a => a.nombre);
+  guardarAprobados(plan, todos);
+  render();
 });
 
-// Guardar estado al hacer clic
-document.addEventListener("click", () => {
-    const aprobadas = [];
-    document.querySelectorAll(".asignatura.aprobada").forEach(el => aprobadas.push(el.textContent));
-    localStorage.setItem("aprobadas", JSON.stringify(aprobadas));
+btnLimpiar.addEventListener("click", () => {
+  const plan = planSelect.value;
+  guardarAprobados(plan, []);
+  render();
 });
 
+/* ------------------ Inicio ------------------ */
+document.addEventListener("DOMContentLoaded", () => {
+  render();
+});
