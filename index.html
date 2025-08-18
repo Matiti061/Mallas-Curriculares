@@ -1,17 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malla Curricular Derecho</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Malla Curricular Interactiva</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Malla Curricular - Derecho</h1>
-    <div id="malla">
-        <!-- La malla se generará dinámicamente con JS -->
-    </div>
-    <script src="script.js"></script>
+  <header class="app-header">
+    <h1>Malla Curricular Interactiva</h1>
+    <p class="subtitle">Marca los ramos aprobados y ve qué puedes tomar según sus previaturas.</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <label for="planSelect" class="control-label">Plan / Carrera</label>
+      <select id="planSelect" class="select">
+        <option value="DERECHO">Derecho</option>
+        <option value="ICINF">Ing. Informática (ICINF)</option>
+      </select>
+
+      <div class="actions">
+        <button id="btnMarcarTodos" class="btn">Marcar todos</button>
+        <button id="btnLimpiar" class="btn btn-outline">Limpiar</button>
+      </div>
+
+      <div class="search-wrap">
+        <input id="buscador" class="input" type="search" placeholder="Buscar asignatura..." />
+      </div>
+    </section>
+
+    <section id="legend" class="legend">
+      <div class="legend-item">
+        <span class="dot dot-enabled"></span> Disponible
+      </div>
+      <div class="legend-item">
+        <span class="dot dot-locked"></span> Bloqueada por previatura
+      </div>
+      <div class="legend-item">
+        <span class="dot dot-done"></span> Aprobada
+      </div>
+    </section>
+
+    <section id="lista" class="grid"></section>
+  </main>
+
+  <footer class="app-footer">
+    <small>Persistencia local (LocalStorage). Paleta: Celeste Pastel, Rosado Pastel, Calipso, Celeste, Fucsia.</small>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
