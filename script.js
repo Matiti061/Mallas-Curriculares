@@ -1,10 +1,3 @@
-/* 
-  Datos de previaturas cargados desde los PDFs provistos por el usuario.
-  Referencias:
-  - Derecho: :contentReference[oaicite:0]{index=0}
-  - ICINF:  :contentReference[oaicite:1]{index=1}
-*/
-
 const curricula = {
   DERECHO: [
     { nombre: "Introducción al Derecho", prereq: [] },
