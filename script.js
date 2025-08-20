@@ -2,36 +2,41 @@ const curricula = {
   DERECHO: [
     // ---- SEMESTRE 1 ----
     { nombre: "Introducción al Derecho", semestre: 1, prereq: [] },
-    { nombre: "Instituciones Políticas", semestre: 1, prereq: [] },
-    { nombre: "Fundamentos Filosóficos del Derecho", semestre: 1, prereq: [] },
-    { nombre: "Antropología", semestre: 1, prereq: [] },
-    { nombre: "Fundamentos de la Economía", semestre: 1, prereq: [] },
+    { nombre: "Historia Constitucional de Chile", semestre: 1, prereq: [] },
+    { nombre: "Instituciones Politicas", semestre: 1, prereq: [] },
+    { nombre: "Fundamentos Filosoficos del Derecho", semestre: 1, prereq: [] },
+    { nombre: "Estrategias para el Aprendizaje", semestre: 1, prereq: [] },
 
     // ---- SEMESTRE 2 ----
-    { nombre: "Teoría de la Ley de las Personas", semestre: 2, prereq: ["Introducción al Derecho"] },
+    { nombre: "Teoría de la Ley y las Personas", semestre: 2, prereq: ["Introducción al Derecho"] },
     { nombre: "Derechos Fundamentales", semestre: 2, prereq: ["Instituciones Políticas"] },
-    { nombre: "Ética", semestre: 2, prereq: ["Antropología"] },
-    { nombre: "Derecho Individual del Trabajo", semestre: 2, prereq: ["Fundamentos de la Economía"] },
-
+    { nombre: "Fundamentos de la Economia", semestre: 2, prereq: [] },
+    { nombre: "Fundamentos de la Investigacion Juridica", semestre: 2, prereq: [] },
+    { nombre: "Filosofia del Derecho", semestre: 2, prereq: ["Fundamentos Filosoficos del Derecho"] },
+    { nombre: "Antropologia", semestre: 2, prereq: [] },
+    
     // ---- SEMESTRE 3 ----
     { nombre: "Acto Jurídico", semestre: 3, prereq: ["Teoría de la Ley de las Personas"] },
     { nombre: "Derecho Constitucional Orgánico", semestre: 3, prereq: ["Derechos Fundamentales"] },
-    { nombre: "Derecho Procesal Orgánico", semestre: 3, prereq: ["Derechos Fundamentales"] },
-    { nombre: "Filosofía del Derecho", semestre: 3, prereq: ["Fundamentos Filosóficos del Derecho"] },
+    { nombre: "Derecho Individual del Trabajo", semestre: 3, prereq: ["Fundamentos de la Economia"] },
+    { nombre: "Derecho Procesal Organico", semestre: 3, prereq: ["Derechos Fundamentales"] },
+    { nombre: "Etica", semestre: 3, prereq: ["Antropologia] },
 
     // ---- SEMESTRE 4 ----
     { nombre: "Bienes", semestre: 4, prereq: ["Acto Jurídico"] },
     { nombre: "Derecho Administrativo", semestre: 4, prereq: ["Derecho Constitucional Orgánico"] },
     { nombre: "Derecho Colectivo del Trabajo y de la Seguridad Social", semestre: 4, prereq: ["Derecho Individual del Trabajo"] },
-    { nombre: "Reglas Comunes a Todo Procedimiento", semestre: 4, prereq: ["Derecho Procesal Orgánico"] },
-    { nombre: "Electivo de Formación Integral 1", semestre: 4, prereq: ["Ética"] },
+    { nombre: "Reglas Comunes a Todo Procedimiento", semestre: 4, prereq: ["Derechos Procesal Organico"] },
+    { nombre: "Argumentacion y Expresion Oral", semestre: 4, prereq: [] },
+    { nombre: "Electivo de Formacion Integral 1", semestre: 4, prereq: ["Etica"] },
 
     // ---- SEMESTRE 5 ----
     { nombre: "Obligaciones y Contratos", semestre: 5, prereq: ["Bienes"] },
     { nombre: "Teoría del Delito y de la Pena", semestre: 5, prereq: ["Derechos Fundamentales"] },
     { nombre: "Actos de Comercio", semestre: 5, prereq: ["Acto Jurídico"] },
     { nombre: "Procedimientos Declarativos", semestre: 5, prereq: ["Reglas Comunes a Todo Procedimiento"] },
-    { nombre: "Argumentación y Expresión Oral", semestre: 5, prereq: [] },
+    { nombre: "Metodos Colaborativos de Resolucion de Conflictos", semestre: 5, prereq: ["Argumentacion y Expresion Oral"] },
+    { nombre: "Electivo de Formacion Integral 2", semestre: 5, prereq: [] },
 
     // ---- SEMESTRE 6 ----
     { nombre: "Métodos Colaborativos de Resolución de Conflictos", semestre: 6, prereq: ["Argumentación y Expresión Oral"] },
