@@ -9,7 +9,7 @@
 <body>
   <header class="app-header">
     <h1>Malla Curricular Interactiva</h1>
-    <p class="subtitle">Marca los ramos aprobados y ve qué puedes tomar según sus previaturas.</p>
+    <p class="subtitle">Marca los ramos aprobados y desbloquea los siguientes según sus previaturas.</p>
   </header>
 
   <main class="container">
@@ -31,22 +31,16 @@
     </section>
 
     <section id="legend" class="legend">
-      <div class="legend-item">
-        <span class="dot dot-enabled"></span> Disponible
-      </div>
-      <div class="legend-item">
-        <span class="dot dot-locked"></span> Bloqueada por previatura
-      </div>
-      <div class="legend-item">
-        <span class="dot dot-done"></span> Aprobada
-      </div>
+      <div class="legend-item"><span class="dot dot-enabled"></span> Disponible</div>
+      <div class="legend-item"><span class="dot dot-locked"></span> Bloqueada</div>
+      <div class="legend-item"><span class="dot dot-done"></span> Aprobada</div>
     </section>
 
     <section id="lista" class="grid"></section>
   </main>
 
   <footer class="app-footer">
-    <small>Persistencia local (LocalStorage). Paleta: Celeste Pastel, Rosado Pastel, Calipso, Celeste, Fucsia.</small>
+    <small>Paleta: Celeste Pastel, Rosado Pastel, Calipso, Celeste, Fucsia. Datos persistidos en LocalStorage.</small>
   </footer>
 
   <script src="script.js"></script>
