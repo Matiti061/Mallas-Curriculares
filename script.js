@@ -76,10 +76,54 @@ const curricula = {
     { nombre: "Seminario de Integración Jurídica", semestre: 10, prereq: [] }
   ],
 
-  ICINF: [
-    /* … aquí vendría la malla de ICINF … */
-  ]
-};
+const previaturas = {
+  DERECHO: [
+    { nombre: "Introducción al Derecho", prereq: [] },
+    { nombre: "Teoría de la Ley de las Personas", prereq: ["Introducción al Derecho"] }, // ejemplo solicitado
+    { nombre: "Instituciones Políticas", prereq: [] },
+    { nombre: "Derechos Fundamentales", prereq: ["Instituciones Políticas"] },
+    { nombre: "Fundamentos Filosóficos del Derecho", prereq: [] },
+    { nombre: "Filosofía del Derecho", prereq: ["Fundamentos Filosóficos del Derecho"] },
+    { nombre: "Acto Jurídico", prereq: ["Teoría de la Ley de las Personas"] },
+    { nombre: "Derecho Constitucional Orgánico", prereq: ["Derechos Fundamentales"] },
+    { nombre: "Fundamentos de la Economía", prereq: [] },
+    { nombre: "Derecho Individual del Trabajo", prereq: ["Fundamentos de la Economía"] },
+    { nombre: "Derecho Procesal Orgánico", prereq: ["Derechos Fundamentales"] },
+    { nombre: "Antropología", prereq: [] },
+    { nombre: "Ética", prereq: ["Antropología"] },
+    { nombre: "Bienes", prereq: ["Acto Jurídico"] },
+    { nombre: "Derecho Administrativo", prereq: ["Derecho Constitucional Orgánico"] },
+    { nombre: "Derecho Colectivo del Trabajo y de la Seguridad Social", prereq: ["Derecho Individual del Trabajo"] },
+    { nombre: "Reglas Comunes a Todo Procedimiento", prereq: ["Derecho Procesal Orgánico"] },
+    { nombre: "Electivo de Formación Integral 1", prereq: ["Ética"] },
+    { nombre: "Obligaciones y Contratos", prereq: ["Bienes"] },
+    { nombre: "Teoría del Delito y de la Pena", prereq: ["Derechos Fundamentales"] },
+    { nombre: "Actos de Comercio", prereq: ["Acto Jurídico"] },
+    { nombre: "Procedimientos Declarativos", prereq: ["Reglas Comunes a Todo Procedimiento"] },
+    { nombre: "Argumentación y Expresión Oral", prereq: [] },
+    { nombre: "Métodos Colaborativos de Resolución de Conflictos", prereq: ["Argumentación y Expresión Oral"] },
+    { nombre: "Responsabilidad Civil", prereq: ["Obligaciones y Contratos"] },
+    { nombre: "Formas de Aparición del Delito", prereq: ["Teoría del Delito y de la Pena"] },
+    { nombre: "Derecho Societario", prereq: ["Actos de Comercio"] },
+    { nombre: "Recursos y Juicio Ejecutivo", prereq: ["Procedimientos Declarativos"] },
+    { nombre: "Mediación, Negociación, Conciliación Judicial y Arbitraje", prereq: ["Métodos Colaborativos de Resolución de Conflictos"] },
+    { nombre: "Derecho de Familia y Sucesorio", prereq: ["Responsabilidad Civil"] },
+    { nombre: "Derecho Penal Especial", prereq: ["Formas de Aparición del Delito"] },
+    { nombre: "Insolvencia y Derecho Concursal", prereq: ["Derecho Societario"] },
+    { nombre: "Procedimientos Especiales", prereq: ["Procedimientos Declarativos"] },
+    { nombre: "Redacción Legal", prereq: ["Mediación, Negociación, Conciliación Judicial y Arbitraje"] },
+    { nombre: "Ética y Responsabilidad Profesional", prereq: ["Filosofía del Derecho"] },
+    { nombre: "Derecho Penal Económico y Compliance", prereq: ["Derecho Penal Especial"] },
+    { nombre: "Derecho Tributario", prereq: ["Obligaciones y Contratos"] },
+    { nombre: "Derecho Procesal Penal", prereq: ["Derecho Penal Especial"] },
+    { nombre: "Derecho Económico Regulatorio", prereq: ["Derecho Administrativo"] },
+    { nombre: "Destrezas de Litigación Oral", prereq: ["Procedimientos Especiales"] },
+    { nombre: "Clínica Jurídica 1", prereq: ["Procedimientos Especiales"] },
+    { nombre: "Fundamentos de la Investigación Jurídica", prereq: [] },
+    { nombre: "Seminario de Investigación", prereq: ["Fundamentos de la Investigación Jurídica"] },
+    { nombre: "Clínica Jurídica 2", prereq: ["Clínica Jurídica 1"] },
+    { nombre: "Seminario de Integración Jurídica", prereq: ["Todo aprobado hasta el noveno semestre"] }
+  ],
 /* =========================
    2) Utilidades y estado
    ========================= */
