@@ -2,8 +2,8 @@
   /* Paleta solicitada */
   --celeste-pastel: #B3E5FC;   /* Celeste pastel */
   --rosado-pastel:  #F8BBD0;   /* Rosado pastel */
-  --calipso:        #00B5AD;   /* Calipso (turquesa/teal) */
-  --celeste:        #4FC3F7;   /* Celeste */
+  --verde:        #0cf973;   /* verde (turquesa/teal) */
+  --celeste:        #2abcff;   /* Celeste */
   --fucsia:         #FF5AB3;   /* Fucsia suavizado */
 
   --bg: #0f172a;
@@ -120,7 +120,7 @@ body{
 .dot{ width: 12px; height: 12px; border-radius: 999px; display: inline-block; border: 1px solid rgba(255,255,255,.4); }
 .dot-enabled{ background: var(--celeste); }
 .dot-locked{ background: var(--rosado-pastel); }
-.dot-done{ background: var(--calipso); }
+.dot-done{ background: var(--verde); }
 
 .grid{
   margin-top: 10px;
@@ -196,7 +196,7 @@ body{
 }
 .pill-enabled{ background: var(--celeste); }
 .pill-locked{ background: var(--rosado-pastel); }
-.pill-done{ background: var(--calipso); }
+.pill-done{ background: var(--verde); }
 
 .locked{
   opacity: .55;

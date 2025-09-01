@@ -95,18 +95,35 @@ function crearCard(asig,plan,aprobados){
 
   const pill=document.createElement("span");
   pill.className="state-pill "+(done?"pill-done":libre?"pill-enabled":"pill-locked");
-  pill.textContent=done?"Aprobada":libre?"Disponible":"Bloqueada";
+  pill.textContent=done?"":libre?"":"";
   card.appendChild(pill);
 
   const h=document.createElement("h3");h.className="card-title";h.textContent=asig.nombre;
   card.appendChild(h);
+
+  // Agrega prerrequisitos debajo del título
+  const prereqDiv = document.createElement("div");
+  prereqDiv.className = "card-prereq";
+  prereqDiv.textContent = done
+    ? "Aprobado"
+    : (asig.prereq && asig.prereq.length > 0
+        ? "Prerrequisito: " + asig.prereq.join(", ")
+        : "Sin prerrequisitos");
+  card.appendChild(prereqDiv);
 
   const chk=document.createElement("input");chk.type="checkbox";chk.checked=done;
   chk.disabled=!libre&&!done;
   chk.onchange=()=>{
     let aprob=new Set(cargarAprobados(plan));
     if(chk.checked) aprob.add(asig.nombre); else aprob.delete(asig.nombre);
-    guardarAprobados(plan,[...aprob]); render();
+    guardarAprobados(plan,[...aprob]);
+    // Actualiza el texto de prerrequisito al marcar/desmarcar
+    prereqDiv.textContent = chk.checked
+      ? "Aprobado"
+      : (asig.prereq && asig.prereq.length > 0
+          ? "Prerrequisito: " + asig.prereq.join(", ")
+          : "Sin prerrequisitos");
+    render();
   }
   card.appendChild(chk);
 
