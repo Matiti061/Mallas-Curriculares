@@ -21,7 +21,7 @@ const curricula={
     {nombre:"Fundamentos de la Economia",semestre:2,prereq:[]},
     {nombre:"Fundamentos de la Investigación Jurídica",semestre:2,prereq:[]},
     {nombre:"Filosofía del Derecho",semestre:2,prereq:["Fundamentos Filosóficos del Derecho"]},
-    {nombre:"Antropología",semestre:2,prereq:[]},
+    {nombre:"Antropologia",semestre:2,prereq:[]},
     // Semestre 3
     {nombre:"Acto Jurídico",semestre:3,prereq:[]},
     {nombre:"Derecho Constitucional Organico",semestre:3,prereq:["Derechos Fundamentales"]},
