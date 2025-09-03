@@ -77,7 +77,73 @@ const curricula={
   ],
   ICINF:[
     // Semestre 1
-    
+    {nombre:"Introduccion a la Matematica", semestre:1, prereq:[]},
+    {nombre:"Quimica", semestre:1, prereq:[]},
+    {nombre:"Taller de Introduccion a la Ingenieria Informatica", semestre:1, prereq:[]},
+    {nombre:"Habilidades Comunicativas para Ingenieros", semestre:1, prereq:[]},
+    {nombre:"Programacion", semestre:1, prereq:[]},
+    // Semestre 2
+    {nombre:"Introduccion al Calculo", semestre:2, prereq:["Introduccion a la Matematica"]},
+    {nombre:"Algebra", semestre:2, prereq:[]},
+    {nombre:"Introduccion a la Fisica", semestre:2, prereq:[]},
+    {nombre:"Ciudadania para el Buen vivir", semestre:2, prereq:[]},
+    {nombre:"Programacion Orientada a Objetos", semestre:2, prereq:["Programacion"]},
+    // Semestre 3
+    {nombre:"Calculo Diferencial e Integral", semestre:3, prereq:["Introduccion al Calculo"]},
+    {nombre:"Algebra Superior", semestre:3, prereq:["Algebra"]},
+    {nombre:"Fisica Newtoniana", semestre:3, prereq:["Introduccion a la Fisica","Introduccion al Calculo"]},
+    {nombre:"Estructura de Datos", semestre:3, prereq:["Programacion"]},
+    {nombre:"Taller de Programacion Aplicada", semestre:3, prereq:["Programacion Orientada a Objetos"]},
+    {nombre:"Ingles 1", semestre:3, prereq: []},
+    // Semestre 4
+    {nombre:"Calculo Multivariable", semestre:4, prereq:["Calculo Diferencial e Integral"]},
+    {nombre:"Estructuras Discretas", semestre:4, prereq:["Algebra"]},
+    {nombre:"Electromagnetismo", semestre:4, prereq:["Fisica Newtoniana","Calculo Diferencial e Integral"]},
+    {nombre:"Automatas y Lenguajes Formales", semestre:4, prereq:[]},
+    {nombre:"Modelamiento y Paradigmas de Programacion", semestre:4, prereq:[]},
+    {nombre:"Ingles 2", semestre:4, prereq:["Ingles 1"]},
+    // Semestre 5
+    {nombre:"Ecuaciones Diferenciales", semestre:5, prereq:["Calculo Multivariable"]},
+    {nombre:"Fisica Moderna y Ondas", semestre:5, prereq:[]},
+    {nombre:"Estadistica y Probabilidad", semestre:5, prereq:[]},
+    {nombre:"Analisis y Diseños de Algoritmos", semestre:5, prereq:[]},
+    {nombre:"Bases de Datos", semestre:5, prereq:["Modelamiento y Paradigmas de Programacion"]},
+    {nombre:"Ingles 3", semestre:5, prereq:["Ingles 2"]},
+    // Semestre 6
+    {nombre:"Calculo Numerico", semestre:6, prereq:["Calculo Multivariable"]},
+    {nombre:"Taller de Diseño Digital", semestre:6, prereq: []},
+    {nombre:"Bases de datos Avanzada", semestre:6, prereq:["Bases de Datos"]},
+    {nombre:"Tecnologias Web y Moviles", semestre:6, prereq:[]},
+    {nombre:"Ingenieria de Sistemas", semestre:6, prereq:[]},
+    {nombre:"Ingles 4", semestre:6, prereq:["Ingles 3"]},
+    // Semestre 7
+    {nombre:"Arquitectura de Computadores", semestre:7, prereq:["Taller de Diseño Digital"]},
+    {nombre:"Economia", semestre:7, prereq:[]},
+    {nombre:"Gestion de Empresas", semestre:7, prereq: []},
+    {nombre:"Sistemas de Informacion", semestre:7, prereq:["Ingenieria de Sistemas"]},
+    {nombre:"Taller de Ingenieria Informatica", semestre:7, prereq:["Tecnologias Web y Moviles"]},
+    {nombre:"Ingles para Informaticos", semestre:7, prereq:["Ingles 4"]},
+    {nombre:"Practica Intermedia", semestre:7, prereq:["Bases de Datos"]},
+    //Semestre 8
+    {nombre:"Investigacion Operativa", semestre:8, prereq:["Algebra Superior"]},
+    {nombre:"Sistemas Operativos", semestre:8, prereq: ["Arquitectura de Computadores"]},
+    {nombre:"Ingenieria de Software", semestre:8, prereq:["Modelamiento y Paradigmas de Programacion"]},
+    {nombre:"Contabilidad y Costos", semestre:8, prereq:[]},
+    {nombre:"Formulacion y Evaluacion de Proyectos", semestre:8, prereq:[]},
+    {nombre:"Ingles para Informaticos 2", semestre:8, prereq:["Ingles para Informaticos 1"]},
+    // Semestre 9
+    {nombre:"Redes y Comunicaciones", semestre:9, prereq: []},
+    {nombre:"Inteligencia Artificial", semestre:9, prereq: ["Automatas y Lenguajes Formales"]},
+    {nombre:"Taller de Ingenieria de Software", semestre:9, prereq:["Ingenieria de Software"]},
+    {nombre:"Innovacion y Emprendimiento en Informatica", semestre:9, prereq:[]},
+    // Semestre 10
+    {nombre:"Sistemas Distribuidos", semestre:10, prereq:["Redes y Comunicaciones"]},
+    {nombre:"Seguridad Informatica", semestre:10, prereq:["Taller de Ingenieria Informatica"]},
+    {nombre:"Taller de Integracion Tecnologica", semestre:10, prereq:["Taller de Ingenieria de Software"]},
+    {nombre:"Anteproyecto de Titulo", semestre:10, prereq:["Asignaturas hasta el semestre 9"]},
+    //Semestre 11
+    {nombre:"Proyecto de Titulo", semestre:11, prereq:["Anteproyecto de Titulo"]},
+    {nombre:"Practica Profesional", semestre:11, prereq:["Asignaturas hasta el semestre 8"]},
   ]
 };
 
